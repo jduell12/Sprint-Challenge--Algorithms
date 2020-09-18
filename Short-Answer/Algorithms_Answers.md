@@ -9,3 +9,18 @@ b) The outer loop will run n times. The inner loop will run log n times. So to f
 c) The if statement at the beginning of the function is constant time and thus won't impact the overall runtime complexity. The runtime is dependent on the recursive call for bunnyEars(bunnies - 1). Since we are only subtracting 1 from n each time and going until n == 0. The total runtime will be O(n) since n - n is equal to 0, since we are only removing 1 each time it'll take n times to get to 0.
 
 ## Exercise II
+
+def findF(n):
+floor = n // 2 #get midpoint
+
+    #check if eggs are breaking
+    if egg broken at floor:
+        while egg broken at floor:
+            floor -= 1
+        return floor
+    else:
+        while egg not broken at floor:
+            floor += 1
+        return floor
+
+Runtime complexity: O(log n)
