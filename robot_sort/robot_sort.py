@@ -96,17 +96,18 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        if self._position == 0:
-            self.swap_item()
-            #check if item held is less than item at index 0
-            if self.compare_item() == 1:
-                #swap item for larger value
+        self.set_light_on()
+        
+        while self.light_is_on():
+            if self._position == 0:
+                self.swap_item()
+            if self.compare_item() == None or self.compare_item() < 1:
                 self.swap_item()
             #check if can move right
             while self.can_move_right():
                 self.move_right()
                 #check if item in front of robot is greater than item held
-                if self.compare_item() == 1:
+                if self.compare_item() == None or self.compare_item() < 1:
                     #swap item for larger value
                     self.swap_item()
             #to place larger item at end 
